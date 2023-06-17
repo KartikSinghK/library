@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="icons/library.png">
+    <script src="https://kit.fontawesome.com/977f6ff7f3.js" crossorigin="anonymous"></script>
+    <title>Library</title>
+</head>
+
+<body>
+    <div class="container is-fluid pt-3">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <a class="navbar-item" href="#">
+                    <img src="icons/bookshelf.png">
+                    <p class="title is-3 ml-2">Library</p>
+                </a>
+            </div>
+
+            <div class="navbar-menu">
+                <div class="navbar-end">
+                    <div class="navbar-item">
+                        <a class="button is-success" id="form-control">
+                            <span class="icon mr-2">
+                                <i class="fa fa-plus"></i>
+                            </span>
+                            Add Book
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hide form card p-5">
+            <h1 class="title is-4">Book Details</h1>
+            <div class="field">
+                <label class="label">Book Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ex: Atomic Habits">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Author Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ex: James Clear">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Image Link</label>
+                <div class="control">
+                    <input class="input" type="url" placeholder="https://anImage.png">
+                </div>
+            </div>
+            <div class="field">
+                <label class="checkbox">
+                    <input type="checkbox">
+                    Read?
+                </label>
+            </div>
+
+            <div class="field is-grouped controls mt-5">
+                <div class="control">
+                    <a class="button is-success" id="save">
+                        Save
+                    </a>
+                </div>
+                <div class="control">
+                    <a class="button is-light" id="cancel">
+                        cancel
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="hide edit-form card p-5">
+            <h1 class="title is-4">Edit Book Details</h1>
+            <div class="field">
+                <label class="label">Book Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ex: Atomic Habits">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Author Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="Ex: James Clear">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Image Link</label>
+                <div class="control">
+                    <input class="input" type="url" placeholder="https://anImage.png">
+                </div>
+            </div>
+
+
+            <div class="field is-grouped controls mt-5">
+                <div class="control">
+                    <a class="button is-success" id="save-changes">
+                        Save changes
+                    </a>
+                </div>
+                <div class="control">
+                    <a class="button is-light" id="cancel-changes">
+                        cancel
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="card-container is-flex is-flex-wrap-wrap">
+            <!-- <div class="card mb-4" data="0">
+                <div class="card-image">
+                    <figure class="image is-4by3">
+                        <img src="https://m.media-amazon.com/images/I/71u-cpucTRL._AC_UF1000,1000_QL80_.jpg"
+                            alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="card-content">
+                    <div class="content">
+                        <p class="title is-4">Harry potter and the philosopher's stone</p>
+                        <p class="subtitle is-6">by JK Rowling</p>
+                        <button class="button is-success">Read</button>
+                    </div>
+                </div>
+                <footer class="card-footer">
+                    <a href="#" class="card-footer-item has-text-weight-semibold">Edit</a>
+                    <a href="#" class="card-footer-item has-text-danger-dark has-text-weight-semibold">Delete</a>
+                </footer>
+            </div> -->
+        </div>
+
+    </div>
+    <script src="library.js"></script>
+</body>
+
+</html>
