@@ -1,16 +1,42 @@
-.card{
-    width:350px;
-    height: min-content;
-    margin:1rem 2rem;
-
+body {
+	background-color: #faf9f6;
+	position: relative;
 }
-.hide{
-    position: absolute;
-    translate:180% 30%;
-    scale:0;
-    z-index: 999;
-    transition: scale 0.2s ease-in;
+#overlay {
+	position: fixed; 
+	display: none; 
+	width: 100%;
+	height: 100%; 
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.5); 
+	z-index: 2; 
+	cursor: pointer; 
+	transition: display 0.15s ease-in;
 }
-.show{
-    scale:1;
+.navbar {
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+}
+.container {
+	padding-top: 60px;
+}
+.card {
+	width: 350px;
+	height: min-content;
+	margin: 1rem 2rem;
+}
+.hide {
+	position: absolute;
+	translate: 40vw 20vh;
+	scale: 0;
+	z-index: 999;
+	transition: scale 0.15s ease-in;
+}
+.show {
+	scale: 1;
 }

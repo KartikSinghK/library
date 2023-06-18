@@ -12,29 +12,29 @@
 </head>
 
 <body>
-    <div class="container is-fluid pt-3">
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <a class="navbar-item" href="#">
-                    <img src="icons/bookshelf.png">
-                    <p class="title is-3 ml-2">Library</p>
-                </a>
-            </div>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="#">
+                <img src="icons/bookshelf.png">
+                <p class="title is-3 ml-2">Library</p>
+            </a>
+        </div>
 
-            <div class="navbar-menu">
-                <div class="navbar-end">
-                    <div class="navbar-item">
-                        <a class="button is-success" id="form-control">
-                            <span class="icon mr-2">
-                                <i class="fa fa-plus"></i>
-                            </span>
-                            Add Book
-                        </a>
-                    </div>
+        <div class="navbar-menu">
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <a class="button is-success" id="form-control">
+                        <span class="icon mr-2">
+                            <i class="fa fa-plus"></i>
+                        </span>
+                        Add Book
+                    </a>
                 </div>
             </div>
-        </nav>
-
+        </div>
+    </nav>
+    <div id="overlay"></div>
+    <div class="container is-fluid">
         <div class="hide form card p-5">
             <h1 class="title is-4">Book Details</h1>
             <div class="field">
@@ -111,28 +111,18 @@
             </div>
         </div>
         <div class="card-container is-flex is-flex-wrap-wrap">
-            <!-- <div class="card mb-4" data="0">
-                <div class="card-image">
-                    <figure class="image is-4by3">
-                        <img src="https://m.media-amazon.com/images/I/71u-cpucTRL._AC_UF1000,1000_QL80_.jpg"
-                            alt="Placeholder image">
-                    </figure>
-                </div>
-                <div class="card-content">
-                    <div class="content">
-                        <p class="title is-4">Harry potter and the philosopher's stone</p>
-                        <p class="subtitle is-6">by JK Rowling</p>
-                        <button class="button is-success">Read</button>
-                    </div>
-                </div>
-                <footer class="card-footer">
-                    <a href="#" class="card-footer-item has-text-weight-semibold">Edit</a>
-                    <a href="#" class="card-footer-item has-text-danger-dark has-text-weight-semibold">Delete</a>
-                </footer>
-            </div> -->
         </div>
 
     </div>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>
+                <strong>Library</strong> by <a href="https://github.com/KartikSinghK">Kartik Singh</a>. The source code
+                is licensed
+                <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+            </p>
+        </div>
+    </footer>
     <script src="library.js"></script>
 </body>
 

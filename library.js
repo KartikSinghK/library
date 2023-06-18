@@ -6,47 +6,62 @@ const editControls = editForm.querySelector(".controls");
 const cardContainer = document.querySelector(".card-container");
 const inputs = [...form.querySelectorAll(".form .field input")];
 const newDetails = [...editForm.querySelectorAll(".field input")];
-
+const overlay = document.getElementById("overlay");
 let selectedToEdit = "";
 const library = [
 	{
 		title: "Harry Potter and the philosopher's stone",
 		author: "JK Rowling",
 		read: true,
-		cover: "https://m.media-amazon.com/images/I/71u-cpucTRL._AC_UF1000,1000_QL80_.jpg",
+		cover: "https://media.harrypotterfanzone.com/philosophers-stone-ebook-cover-600x0-c-default.jpg",
 		id: "lj00lv7epn6f0xzywn",
 	},
 	{
 		title: "Harry Potter and the chamber of secrets",
 		author: "JK Rowling",
 		read: true,
-		cover: "https://m.media-amazon.com/images/I/81S0LnPGGUL._AC_UF1000,1000_QL80_.jpg",
+		cover: "https://media.harrypotterfanzone.com/chamber-of-secrets-ebook-cover-600x0-c-default.jpg",
 		id: "lj00m5eytas90el6oqc",
 	},
 	{
 		title: "Harry Potter and prisonar of Azkaban",
 		author: "JK Rowling",
 		read: true,
-		cover: "https://m.media-amazon.com/images/I/51n7uF9FfxL.jpg",
+		cover: "https://media.harrypotterfanzone.com/prisoner-of-azkaban-ebook-cover-600x0-c-default.jpg",
 		id: "lj00mg7ua0gvnkbdc1",
-	},
-	{
-		title: "Harry Potter and the Half Blood Prince",
-		author: "JK Rowling",
-		read: true,
-		cover: "https://m.media-amazon.com/images/I/51ibZl+yt8L.jpg",
-		id: "lj00mm9rqr8w6t42h6g",
 	},
 	{
 		title: "Harry Potter and the Goblet of Fire",
 		author: "JK Rowling",
 		read: true,
-		cover: "https://m.media-amazon.com/images/I/51UPokab7LL._AC_UF1000,1000_QL80_.jpg",
+		cover: "https://media.harrypotterfanzone.com/goblet-of-fire-ebook-cover-600x0-c-default.jpg",
 		id: "lj00myx4tb0w3q96e2o",
 	},
+	{
+		title: "Harry Potter and the Order Of the Phoenix",
+		author: "JK Rowling",
+		read: true,
+		cover: "https://media.harrypotterfanzone.com/order-of-the-phoenix-ebook-cover-600x0-c-default.jpg",
+		id: "lj00myx4tb0w3q06e2e"
+	},
+	{
+		title: "Harry Potter and the Half Blood Prince",
+		author: "JK Rowling",
+		read: true,
+		cover: "https://media.harrypotterfanzone.com/half-blood-prince-ebook-cover-600x0-c-default.jpg",
+		id: "lj00mm9rqr8w6t42h6g",
+	},
+	{
+		title: "Harry Potter and the Deathly Hallows",
+		author: "JK Rowling",
+		read: true,
+		cover:"https://media.harrypotterfanzone.com/deathly-hallows-ebook-cover-600x0-c-default.jpg",
+		id: "lj00mm0rr8w6u42h6g"
+	}
 ];
 addBookBtn.addEventListener("click", () => {
 	form.classList.add("show");
+	overlay.style.display = "block";
 });
 
 controls.addEventListener("click", ({ target }) => {
@@ -65,6 +80,7 @@ controls.addEventListener("click", ({ target }) => {
 			clearForm();
 		}
 	}
+	overlay.style.display = "none";
 });
 editControls.addEventListener("click", ({ target }) => {
 
@@ -78,13 +94,9 @@ editControls.addEventListener("click", ({ target }) => {
 		});
 		editBook(...values);
 	}
+	overlay.style.display = "none";
 });
-function getIndex(id) {
-	for (let i = 0; i < library.length; i++) {
-		if (library[i].id === id) return i;
-	}
-	return -1;
-}
+
 
 cardContainer.addEventListener("click", ({ target }) => {
 	if (target.id === "delete") {
@@ -116,8 +128,21 @@ cardContainer.addEventListener("click", ({ target }) => {
 		newDetails[0].value = library[index].title;
 		newDetails[1].value = library[index].author;
 		newDetails[2].value = library[index].cover;
+
+		overlay.style.display = "block";
 	}
 });
+overlay.addEventListener("click", ()=>{
+	editForm.classList.remove("show");
+	form.classList.remove("show");
+	overlay.style.display = "none";
+})
+function getIndex(id) {
+	for (let i = 0; i < library.length; i++) {
+		if (library[i].id === id) return i;
+	}
+	return -1;
+}
 function editBook(title, author, cover, read) {
 	let index = getIndex(selectedToEdit);
 	const card = cardContainer.querySelector(`[data=${selectedToEdit}]`)
@@ -162,7 +187,7 @@ function makeCard(book) {
 	card.classList.add("card", "mb-4");
 	card.setAttribute("data", book.id);
 	card.innerHTML = `<div class="card-image">
-                        <figure class="image is-4by3">
+                        <figure class="image is-3by4">
                             <img src="${book.cover}"
                                 alt="Book cover">
                         </figure>
